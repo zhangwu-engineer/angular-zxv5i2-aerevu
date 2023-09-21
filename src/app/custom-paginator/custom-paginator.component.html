@@ -1,0 +1,26 @@
+<div class="wrapper" [style.justify-content]="justify">
+  <div>
+  <button [style.visibility]="!length?'hidden':null"  [class.mat-button-arrow]="!previousLabel" mat-button (click)="previousPage();control.setValue(pageIndex+1)">
+    <span *ngIf="previousLabel">{{previousLabel}}</span>
+    
+    <svg *ngIf="!previousLabel" width="20" viewBox="0 0 24 24" focusable="false" ><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg>
+  </button>
+  <div class="block">
+  <button mat-stroked-button *ngFor="let bt of buttons" (click)="bt!='...' && gotoPage(+bt)" class="pag" 
+        [class.active]="+bt==pageIndex">
+        {{bt!='...'?(+bt)+1:'...'}}
+  </button>
+  </div>
+  <button [style.visibility]="!length?'hidden':null"  mat-button [class.mat-button-arrow]="!nextLabel" (click)="nextPage();control.setValue(pageIndex+1)">
+    <span *ngIf="nextLabel">{{nextLabel}}</span>
+    <svg *ngIf="!nextLabel" width="20" viewBox="0 0 24 24" focusable="false" ><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg>
+  </button>
+</div>
+<div>
+  <input [style.visibility]="!length?'hidden':null"   matInput [formControl]="control" >
+  <mat-select [ngModel]="pageSize" (ngModelChange)="pageSizeChange($event)">
+    <mat-option *ngFor="let size of pageSizeOptions" [value]="size">{{size}}</mat-option>
+  </mat-select>
+</div>
+</div>
+

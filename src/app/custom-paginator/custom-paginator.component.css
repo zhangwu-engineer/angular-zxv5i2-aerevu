@@ -1,0 +1,51 @@
+.wrapper{
+  display:flex;
+  align-items: center;
+}
+.wrapper .mat-button:first-child
+{
+  margin-right:.25rem;
+}
+.mat-option{
+  text-align: right;
+  padding-right: 1.5rem
+}
+.block
+{
+  display:inline-block;
+}
+.mat-input-element,.mat-select
+{
+  width:2rem;
+  padding:.25rem .5rem;
+  text-align: right;
+  border:1px solid silver;
+  border-radius: .25rem;
+  margin:.5rem;
+  font-size:.9rem;
+  margin-left:0;
+}
+.mat-select{
+  width:5rem;
+  min-width: 5rem;
+  padding:.25rem 0;
+}
+
+.mat-input-element:focus, .mat-select:focus{
+  border-color: var(--active-page-background-color, #80bdff);
+}
+.mat-stroked-button.pag{
+  padding:0;
+  min-width: 2.5em;
+  margin-right:.25rem;
+  font-size: .9rem;
+}
+.mat-stroked-button.pag.active{
+background-color:var(--active-page-background-color, #80bdff);
+color:var(--active-page-color, #fff);
+}
+.mat-button.mat-button-arrow{
+  padding: 0;
+  min-width: 2.5em;
+  margin-right: .25rem;
+  font-size: .9rem;}
